@@ -1,0 +1,56 @@
+---
+- summary: |
+    Долгая загрузка сайта
+  environment: |
+    Google Chrome 132.0.6834.160 (Официальная сборка) (64 бит)
+    ОС Windows
+  steps-to-reproduce: |
+    1. Открыть страницу сайта https://hexlet-products-store.vercel.app/
+    2. Зайти в DevTools
+    3. В DevTools выбрать вкладку "Performance insights"
+    4. Нажать на кнопку «Measure page load»
+  expected-result: |
+    Сайт должен иметь скорость загрузки до трех секунд
+  actual-result: |
+    Сайт имеет скорость загрузки 10 секунд
+
+  - summary: |
+    Отсутствует возожность сбросить категорию
+  environment: |
+    Google Chrome 132.0.6834.160 (Официальная сборка) (64 бит)
+    ОС Windows
+  steps-to-reproduce: |
+    1. Открыть страницу сайта https://hexlet-products-store.vercel.app/
+    2. В Category выбрать "beauty"
+    3. Сбросить выбранную категорию без перезагрузки страницы
+  expected-result: |
+    Категория сброшена и отображены все товары
+  actual-result: |
+    Нет возможности сброса категории
+
+  - summary: |
+    Отсутствует возожность выбора нескольких категорий
+  environment: |
+    Google Chrome 132.0.6834.160 (Официальная сборка) (64 бит)
+    ОС Windows
+  steps-to-reproduce: |
+    1. Открыть страницу сайта https://hexlet-products-store.vercel.app/
+    2. В Category выбрать "beauty"
+    3. Повторно зайти в Category и выбрать любую дополнительную категорию
+  expected-result: |
+    Выбраны две выбранные категории
+  actual-result: |
+    При выборе дополнительной категории выводится только она, первоначально выбранная не выводится
+
+ - summary: |
+    Не работает фильтрация по всем страницам каталога
+  environment: |
+    Google Chrome 132.0.6834.160 (Официальная сборка) (64 бит)
+    ОС Windows
+  steps-to-reproduce: |
+    1. Открыть страницу сайта https://hexlet-products-store.vercel.app/
+    2. В строке поиска ввести название любого товара, находящегося на 2 странице каталога (например, milk)
+  expected-result: |
+    Отображен товар, согласно заданного ключевого слова
+  actual-result: |
+    Выводится результат "Nothing found!"
