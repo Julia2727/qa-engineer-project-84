@@ -1,0 +1,18 @@
+test-cases:
+  - summary: |
+      Проверка корректности отображения категорий
+    status: fail
+
+bugreports:
+  - summary: |
+      Некорректное отображение списка категорий
+    environment: |
+      Google Chrome 132.0.6834.160 (Официальная сборка) (64 бит)
+    ОС Windows
+    steps-to-reproduce: |
+      1. Открыть страницу https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+      2. Нажать на "Category"
+    expected-result: |
+      Выводится список категорий
+    actual-result: |
+      Первая строка списка категорий пуста
