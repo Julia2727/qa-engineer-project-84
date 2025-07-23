@@ -1,5 +1,19 @@
 ---
 - summary: |
+    Отсутствие локализации (перевода) на русский и английский языки
+  environment: |
+    Google Chrome 132.0.6834.160 (Официальная сборка) (64 бит)
+    ОС Windows
+  steps-to-reproduce: |
+    1. Открыть страницу сайта https://hexlet-products-store.vercel.app/
+    2. Нажать на кнопку «Language»
+    3. Из выпадающего списка выбрать «Russian»
+  expected-result: |
+    Все текстовые блоки должны быть на русском языке
+  actual-result: |
+    Некоторые текстовые блоки не поменяли перевод на русский язык. Например, наименование категорий товаров, описание товаров.
+
+- summary: |
     Долгая загрузка сайта
   environment: |
     Google Chrome 132.0.6834.160 (Официальная сборка) (64 бит)
@@ -7,7 +21,7 @@
   steps-to-reproduce: |
     1. Открыть страницу сайта https://hexlet-products-store.vercel.app/
     2. Зайти в DevTools
-    3. В DevTools выбрать вкладку "Performance insights"
+    3. В DevTools выбрать вкладку «Performance insights»
     4. Нажать на кнопку «Measure page load»
   expected-result: |
     Сайт должен иметь скорость загрузки до трех секунд
