@@ -28,6 +28,33 @@
   actual-result: |
     Сайт имеет скорость загрузки 10 секунд
 
+    - summary: |
+    Сайт медленно работает при высокой нагрузке
+  environment: |
+    Google Chrome 132.0.6834.160 (Официальная сборка) (64 бит)
+    ОС Windows
+  steps-to-reproduce: |
+    1. Открыть страницу сайта https://loaddy.com
+    2. Добавить url https://hexlet-products-store.vercel.app/
+    3. Выполнить проверку на выдерживание высокой нагрузки
+  expected-result: |
+    Сайт выдерживает большой трафик
+  actual-result: |
+    Результат: 2/10, низкий результат
+
+    - summary: |
+    Отсутствует мобильная версия сайта
+  environment: |
+    Google Chrome 132.0.6834.160 (Официальная сборка) (64 бит)
+    ОС Windows
+  steps-to-reproduce: |
+    1. Открыть страницу сайта https://hexlet-products-store.vercel.app/
+    2. В Devtools выбрать разрешение на Iphone XR
+  expected-result: |
+     Сайт выглядит удобным, блоки не перекрывают друг друга
+  actual-result: |
+    Блоки перекрывают друг друга или часть не видна. Например, название категорий фильтра не видны полностью или строка поиска не полностью видна.
+
   - summary: |
     Отсутствует возожность сбросить категорию
   environment: |
@@ -35,7 +62,7 @@
     ОС Windows
   steps-to-reproduce: |
     1. Открыть страницу сайта https://hexlet-products-store.vercel.app/
-    2. В Category выбрать "beauty"
+    2. В Category выбрать «beauty»
     3. Сбросить выбранную категорию без перезагрузки страницы
   expected-result: |
     Категория сброшена и отображены все товары
@@ -49,7 +76,7 @@
     ОС Windows
   steps-to-reproduce: |
     1. Открыть страницу сайта https://hexlet-products-store.vercel.app/
-    2. В Category выбрать "beauty"
+    2. В Category выбрать «beauty»
     3. Повторно зайти в Category и выбрать любую дополнительную категорию
   expected-result: |
     Выбраны две выбранные категории
@@ -67,4 +94,30 @@
   expected-result: |
     Отображен товар, согласно заданного ключевого слова
   actual-result: |
-    Выводится результат "Nothing found!"
+    Выводится результат «Nothing found!»
+
+- summary: |
+    Кнопка «Предыдущая» активна на первой странице каталога
+  environment: |
+    Google Chrome 132.0.6834.160 (Официальная сборка) (64 бит)
+    ОС Windows
+  steps-to-reproduce: |
+    1. Открыть страницу сайта https://hexlet-products-store.vercel.app/и на первой странице каталога
+    2. Навести курсором на кнопку «Предыдущая»
+  expected-result: |
+    Кнопка не кликабельна, никак не подсвечивается при наведении
+  actual-result: |
+    Кнопка меняет фоновый цвет при наведении
+
+- summary: |
+    Кнопка «Следующая» активна на первой странице каталога
+  environment: |
+    Google Chrome 132.0.6834.160 (Официальная сборка) (64 бит)
+    ОС Windows
+  steps-to-reproduce: |
+    1. Открыть страницу сайта https://hexlet-products-store.vercel.app/и на последней странице каталога
+    2. Навести курсором на кнопку «Следующая»
+  expected-result: |
+    Кнопка не кликабельна, никак не подсвечивается при наведении
+  actual-result: |
+    Кнопка меняет фоновый цвет при наведении
